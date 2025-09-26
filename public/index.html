@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat UI</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="chat-app">
+    <header class="chat-header">
+      <button class="back">←</button>
+      <div class="title">
+        <img src="https://i.pravatar.cc/40" alt="grp" class="avatar">
+        <div>
+          <div class="group-name">Fun Friday Group</div>
+          <div class="sub">Chatting as <span id="currentUser">Anonymous</span></div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <label class="identity-toggle">
+          <input type="checkbox" id="anonToggle" checked /> Chat Anonymously
+        </label>
+      </div>
+    </header>
+
+    <main class="messages" id="messages"></main>
+
+    <div class="composer">
+      <input id="messageInput" placeholder="Type a message ..." autocomplete="off" />
+      <div class="actions">
+        <button class="icon-btn" title="Emoji">😀</button>
+        <button class="icon-btn" title="Attach">📎</button>
+      </div>
+      <button id="sendBtn" class="send-btn">➤</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
